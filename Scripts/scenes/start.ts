@@ -23,9 +23,9 @@ module scenes {
             this.tagLine = new objects.Label("How fast can you press the button?", "35px", "Consolas", "#000000", 480, 400, true);
             this.tagLine.alpha = 0;
 
-            this.startButton = new objects.Button(this.assetManager, "buttonUp", 480, 580);
-            this.startButton.scale *= 0.8;
-            this.startButton.setText("Start Game");
+            this.startButton = new objects.Button(this.assetManager, "greyButton", 480, 580);
+            this.startButton.scale *= 0.4;
+            this.startButton.setText("Start Game", 8, 0, 0);
 
             this.Main();
         }

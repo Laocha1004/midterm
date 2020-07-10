@@ -16,7 +16,10 @@
         {id:"logo", src:"./Assets/logo.png"},
         {id:"startBackground", src:"./Assets/landscape4.jpg"},
         {id:"buttonUp", src:"./Assets/button.png"},
-        {id:"buttonDown", src:"./Assets/button_down.png"}
+        {id:"playBackground", src:"./Assets/landscape3.jpg"},
+        {id:"greyButton", src:"./Assets/greyButton.png"},
+        {id:"loseBackground", src:"./Assets/landscape5.jpg"},
+        {id:"winBackground", src:"./Assets/landscape6.jpg"}
     ];
 
     function Init() {

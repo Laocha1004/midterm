@@ -18,7 +18,8 @@ var objects;
         function Button(assetManager, imageString, x, y) {
             if (x === void 0) { x = 0; }
             if (y === void 0) { y = 0; }
-            var _this = _super.call(this, assetManager.getResult(imageString)) || this;
+            var _this = _super.call(this) || this;
+            _this._bitmap = new createjs.Bitmap(assetManager.getResult(imageString));
             _this.x = x;
             _this.y = y;
             _this.on("mouseover", _this.mouseOver);
@@ -33,20 +34,25 @@ var objects;
             this.alpha = 1.0;
         };
         Button.prototype.Init = function () {
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
             this.halfW = this.width * 0.5;
             this.halfH = this.height * 0.5;
             this.regX = this.halfW;
             this.regY = this.halfH;
+            this._bitmap.regX = this._bitmap.getBounds().width * 0.5;
+            this._bitmap.regY = this._bitmap.getBounds().height * 0.5;
+            this.addChild(this._bitmap);
         };
-        Button.prototype.setText = function (text) {
-            var label;
-            label = new objects.Label(text, "12px", "Consolas", "#000000", this.halfW, this.halfH, true);
-            //this.addChild(label);
+        Button.prototype.setText = function (text, scale, xOffset, yOffset) {
+            this._text = new createjs.Text(text, "40px", "Consolas", "#000000");
+            this._text.x = this._bitmap.x + xOffset;
+            this._text.y = this._bitmap.y + yOffset;
+            this._text.regX = this._text.getMeasuredWidth() * 0.5;
+            this._text.regY = this._text.getMeasuredHeight() * 0.5;
+            this._text.scale *= scale;
+            this.addChild(this._text);
         };
         return Button;
-    }(createjs.Bitmap));
+    }(createjs.Container));
     objects.Button = Button;
 })(objects || (objects = {}));
 //# sourceMappingURL=button.js.map

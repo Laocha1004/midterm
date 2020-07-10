@@ -13,10 +13,8 @@ module objects {
             this.Move();
         }
         public Reset():void {
-            // reset any positions, etc
         }
         public Move():void {
-            // doesn't need to move??
         }
     }
 }

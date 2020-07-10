@@ -28,10 +28,8 @@ var objects;
             this.Move();
         };
         Background.prototype.Reset = function () {
-            // reset any positions, etc
         };
         Background.prototype.Move = function () {
-            // doesn't need to move??
         };
         return Background;
     }(createjs.Bitmap));
