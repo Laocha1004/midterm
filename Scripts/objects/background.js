@@ -15,8 +15,8 @@ var objects;
 (function (objects) {
     var Background = /** @class */ (function (_super) {
         __extends(Background, _super);
-        function Background(assetManager) {
-            var _this = _super.call(this, assetManager.getResult("background")) || this;
+        function Background(assetManager, imageString) {
+            var _this = _super.call(this, assetManager.getResult(imageString)) || this;
             console.log("Creating the background");
             _this.Start();
             return _this;

@@ -1,3 +1,15 @@
+body {
+    font-family: verdana, Arial, Helvetica, sans-serif;
+}
+#allPage {
+    width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+}
 #canvas {
     border: 1px black dotted
+}
+.copyright {
+    font-size:small;
+    text-align:center;
 }

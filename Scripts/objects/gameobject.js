@@ -13,26 +13,16 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var objects;
 (function (objects) {
-    var Button = /** @class */ (function (_super) {
-        __extends(Button, _super);
-        function Button(assetManager, imageString, x, y) {
-            if (x === void 0) { x = 0; }
-            if (y === void 0) { y = 0; }
+    // I just need this to be a basic all-purpose object so I've kept it from being abstract.
+    var GameObject = /** @class */ (function (_super) {
+        __extends(GameObject, _super);
+        function GameObject(assetManager, imageString) {
             var _this = _super.call(this, assetManager.getResult(imageString)) || this;
-            _this.x = x;
-            _this.y = y;
-            _this.on("mouseover", _this.mouseOver);
-            _this.on("mouseout", _this.mouseOut);
+            _this.name = imageString;
             _this.Init();
             return _this;
         }
-        Button.prototype.mouseOver = function () {
-            this.alpha = 0.7;
-        };
-        Button.prototype.mouseOut = function () {
-            this.alpha = 1.0;
-        };
-        Button.prototype.Init = function () {
+        GameObject.prototype.Init = function () {
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.halfW = this.width * 0.5;
@@ -40,13 +30,13 @@ var objects;
             this.regX = this.halfW;
             this.regY = this.halfH;
         };
-        Button.prototype.setText = function (text) {
-            var label;
-            label = new objects.Label(text, "12px", "Consolas", "#000000", this.halfW, this.halfH, true);
-            //this.addChild(label);
-        };
-        return Button;
+        GameObject.prototype.Start = function () { };
+        GameObject.prototype.Update = function () { };
+        GameObject.prototype.Reset = function () { };
+        GameObject.prototype.Move = function () { };
+        GameObject.prototype.CheckBound = function () { };
+        return GameObject;
     }(createjs.Bitmap));
-    objects.Button = Button;
+    objects.GameObject = GameObject;
 })(objects || (objects = {}));
-//# sourceMappingURL=button.js.map
+//# sourceMappingURL=gameobject.js.map

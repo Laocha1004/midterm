@@ -19,7 +19,7 @@ module scenes {
         public Update():void {}
 
         public Main():void {
-            this.addChild(this.gameOverLabel):
+            this.addChild(this.gameOverLabel);
             this.addChild(this.nextButton);
 
             this.nextButton.on("click", this.nextButtonClicked);
